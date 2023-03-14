@@ -8,4 +8,19 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="Classes\**" />
+      <Compile Remove="Utilitario\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Classes\**" />
+      <EmbeddedResource Remove="Utilitario\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Classes\**" />
+      <None Remove="Utilitario\**" />
+    </ItemGroup>
+
 </Project>
