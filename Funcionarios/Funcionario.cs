@@ -6,7 +6,8 @@ namespace bytebank_adm.Funcionarios
 
         private string Cpf { get; set; }
 
-        public double Salario { get; set; }
+        // Para que seja possível visualizar Salario na classe Diretor é preciso passar o protected
+        public double Salario { get; protected set; }
 
         public static int TotalDeFuncionarios { get; private set; }
 
@@ -15,10 +16,16 @@ namespace bytebank_adm.Funcionarios
             return this.Salario * 0.10;
         }
 
-        public Funcionario(string cpf)
+        public Funcionario(string cpf, double salario)
         {
             this.Cpf = cpf;
+            this.Salario = salario;
             TotalDeFuncionarios++;
+        }
+
+        public virtual void AumentarSalario()
+        {
+            this.Salario *= 1.10;
         }
     }
 }
