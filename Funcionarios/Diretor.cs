@@ -1,14 +1,10 @@
 namespace bytebank_adm.Funcionarios;
 
-public class Diretor
+public class Diretor : Funcionario
 {
-    public string Nome { get; set; }
-
-    public string Cpf { get; set; }
-    public double Salario { get; set; }
-
-    public double GetBonificacao()
+    public override double GetBonificacao()
     {
-        return this.Salario;
+        // A palavra reservada "base" indica que estará pegando o elemento diretamente da classe Funcionario
+        return this.Salario + base.GetBonificacao();
     }
 }

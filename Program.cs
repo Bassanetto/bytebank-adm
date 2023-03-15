@@ -12,7 +12,6 @@ Console.WriteLine("==============");
 Console.WriteLine(pedro.Nome);
 Console.WriteLine("==============");
 Console.WriteLine(pedro.GetBonificacao());
-Console.WriteLine("==============");
 
 // ===================================================================== // 
 
