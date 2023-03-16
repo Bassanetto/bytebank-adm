@@ -1,40 +1,75 @@
 ﻿using bytebank_adm.Funcionarios;
 using bytebank_adm.Utilitarios;
 
-// ===================================================================== // 
 
-Funcionario pedro = new Funcionario("123456789", 2000);
-pedro.Nome = "Pedro Malazartes";
+#region
 
-Console.WriteLine("==============");
-Console.WriteLine("Nome: " + pedro.Nome);
-Console.WriteLine("Bonificação: " + pedro.GetBonificacao());
+// Funcionario pedro = new Funcionario("123456789", 2000);
+// pedro.Nome = "Pedro Malazartes";
+//
+// Console.WriteLine("==============");
+// Console.WriteLine("Nome: " + pedro.Nome);
+// Console.WriteLine("Bonificação: " + pedro.GetBonificacao());
+//     
+// // ===================================================================== // 
+//
+// Diretor roberto = new Diretor("987654321");
+// roberto.Nome = "Roberto Da Silva";
+//
+// Console.WriteLine("==============");
+// Console.WriteLine("Nome: " + roberto.Nome);
+// Console.WriteLine("Bonificação: " + roberto.GetBonificacao());
+//
+// // ===================================================================== // 
+//
+// GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
+// gerenciador.Registrar(pedro);
+// gerenciador.Registrar(roberto);
+//
+// Console.WriteLine("==============");
+// Console.WriteLine("Total de Bonificações:" + gerenciador.TotalDeBonificacao);
+// Console.WriteLine("Total de Funcionarios: " + Funcionario.TotalDeFuncionarios);
+// Console.WriteLine("==============");
+//
+// // ===================================================================== //
+//
+// pedro.AumentarSalario();
+// roberto.AumentarSalario();
+//
+// Console.WriteLine("Novo salário de Pedro: " + pedro.Salario);
+// Console.WriteLine("Novo salário de Roberto: " + roberto.Salario);
+// Console.WriteLine("==============");
 
-// ===================================================================== // 
+#endregion
 
-Diretor roberto = new Diretor("987654321", 15000);
-roberto.Nome = "Roberto Da Silva";
+#region
 
-Console.WriteLine("==============");
-Console.WriteLine("Nome: " + roberto.Nome);
-Console.WriteLine("Bonificação: " + roberto.GetBonificacao());
+CalcularBonificacao();
 
-// ===================================================================== // 
+void CalcularBonificacao()
+{
+    GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
-gerenciador.Registrar(pedro);
-gerenciador.Registrar(roberto);
+    Designer felipe = new Designer("1345896");
+    felipe.Nome = "Felipe Vieira";
 
-Console.WriteLine("==============");
-Console.WriteLine("Total de Bonificações:" + gerenciador.TotalDeBonificacao);
-Console.WriteLine("Total de Funcionarios: " + Funcionario.TotalDeFuncionarios);
-Console.WriteLine("==============");
+    Diretor paula = new Diretor("1289474");
+    paula.Nome = "Paula Souza";
 
-// ===================================================================== //
+    Auxiliar igor = new Auxiliar("1938709");
+    igor.Nome = "Igor Gava";
 
-pedro.AumentarSalario();
-roberto.AumentarSalario();
+    GerenteDeContas camilla = new GerenteDeContas("1294719508");
+    camilla.Nome = "Camilla Tolotto";
+    
+    gerenciador.Registrar(camilla);
+    gerenciador.Registrar(felipe);
+    gerenciador.Registrar(paula);
+    gerenciador.Registrar(igor);
 
-Console.WriteLine("Novo salário de Pedro: " + pedro.Salario);
-Console.WriteLine("Novo salário de Roberto: " + roberto.Salario);
-Console.WriteLine("==============");
+    Console.WriteLine("Total de Bonificação: " + gerenciador.TotalDeBonificacao);
+
+}
+
+#endregion
+
