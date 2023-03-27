@@ -1,6 +1,8 @@
+using bytebank_adm.SistemaInterno;
+
 namespace bytebank_adm.Funcionarios;
 
-public class Diretor : Funcionario
+public class Diretor : Autenticavel
 {
     public Diretor(string cpf) : base(cpf, 10000)
     {
@@ -17,10 +19,8 @@ public class Diretor : Funcionario
     {
         this.Salario *= 1.15;
     }
-    
-    public string Senha { get; set; }
 
-    public bool Autenticar(string senha)
+    public override bool Autenticar(string senha)
     {
         return this.Senha == senha;
     }
