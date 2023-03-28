@@ -2,7 +2,7 @@ using bytebank_adm.SistemaInterno;
 
 namespace bytebank_adm.Funcionarios;
 
-public class GerenteDeContas : Autenticavel
+public class GerenteDeContas : FuncionarioAutenticavel
 {
     public GerenteDeContas(string cpf) : base(cpf, 4000)
     {
@@ -19,9 +19,4 @@ public class GerenteDeContas : Autenticavel
     }
     
     public string Senha { get; set; }
-
-    public override bool Autenticar(string senha)
-    {
-        return this.Senha == senha;
-    }
 }
